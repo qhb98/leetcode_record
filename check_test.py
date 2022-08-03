@@ -59,33 +59,14 @@
 # print(insert2(intervals=[[1, 3], [6, 9]], new_interval=[2, 5]))
 
 
-def combine(n, k):
+def subsets(nums):
 	"""
-	题 77 组合问题
-	回溯算法
-	:param n: int
-	:param k: int
-	:return: List[List[int]]
+	题78  子集
+	解法
+	:param nums: List[int]
+	:return:  List[List[int]]
 	"""
-	# 先考虑边界条件
-	if n == 0 or k == 0 or k > n:
-		return []
-	elif n == 1:
-		return [1]
-	else:
-		s_list = range(1, n + 1)
-		result = []
-		back_tracking(s_list, result, k, num=0, tmp_res=[])
-		return result
-
-
-def back_tracking(s_list, result, k, num, tmp_res):
-	if num == k:
-		return
-
-	while num < k:
-		for s in s_list:
 
 
 
-print(combine(4, 2))
+print(subsets(nums=[1, 2, 3]))
