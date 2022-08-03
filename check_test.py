@@ -62,10 +62,11 @@
 def subsets(nums):
 	"""
 	题78  子集
-	解法
+	解法   回溯法
 	:param nums: List[int]
 	:return:  List[List[int]]
 	"""
+
 
 
 
