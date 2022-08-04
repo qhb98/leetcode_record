@@ -58,16 +58,45 @@
 #
 # print(insert2(intervals=[[1, 3], [6, 9]], new_interval=[2, 5]))
 
-
-def subsets(nums):
+def merge(s1, s2, s):
 	"""
-	题78  子集
-	解法   回溯法
-	:param nums: List[int]
-	:return:  List[List[int]]
+	将两个列表按顺序融合为一个列表
+	:param s1:
+	:param s2:
+	:param s:
+	:return:
 	"""
+	i = j = 0
+	while i + j < len(s):
+		if j == len(s2) or i < len(s1) and s1[i] < s2[j]:
+			s[i+j] = s1[i]
+			i += 1
+		else:
+			s[i+j] = s2[j]
+			j += 1
 
 
+def merge_sort(s):
+	"""
+	归并排序
+	:param s:
+	:return:
+	"""
+	n = len(s)
+	# 剩一个或者没有直接返回, 不用排序
+	if n < 2:
+		return
+	# 拆分
+	mid = n // 2
+	s1 = s[0:mid]
+	s2 = s[mid:n]
+	merge_sort(s1)
+	merge_sort(s2)
+	# 合并
+	merge(s1, s2, s)
 
 
-print(subsets(nums=[1, 2, 3]))
+if __name__ == '__main__':
+	s = [7, 8, 4, 1, 6, 5, 2, 3]
+	merge_sort(s)
+	print(s)
