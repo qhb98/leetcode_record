@@ -2,33 +2,7 @@
 # @FileName: :test_39.py
 # @Time: 2022/8/9 21:48
 # @Author: QHB
-
-"""
-
-回溯算法: 进行选择; 递归; 撤回选择
-
-解决  排列问题  子集问题 组合问题  切割问题  棋盘问题(n皇后 解数独)
-
-    void backtracking(parameters){
-         if (终止条件) {
-            收集结果
-            return
-         }
-
-         # 进入单层搜索的逻辑
-         for (集合的元素){
-            处理节点
-            递归函数
-            回溯操作 -- 撤销处理节点的情况
-         }
-         return
-
-    }
-
-参考学习链接:
-https://www.bilibili.com/video/BV1cy4y167mM?spm_id_from=333.337.search-card.all.click&vd_source=7111d4cfa9354342c253c06ecdd64e2f
-
-"""
+import time
 
 
 def combination_sum(candidates, target):
@@ -58,6 +32,7 @@ def backtrack(cur, candidates, res, target, cur_result, cur_sum):
         return
 
     if cur_sum > target or cur_sum + min(candidates) > target:
+        # cur_sum + min(candidates) > target 剪枝操作
         return
 
     for j in range(candidates.index(cur), len(candidates)):
@@ -69,5 +44,8 @@ def backtrack(cur, candidates, res, target, cur_result, cur_sum):
         cur_result.pop()
 
 
-s_sum = combination_sum(candidates=[2, 3, 6, 7], target=7)
-print(s_sum)
+start_time = time.time()
+for i in range(100):
+    s_sum = combination_sum(candidates=[2, 3, 6, 7], target=7)
+end_time = time.time()
+print(end_time - start_time)
