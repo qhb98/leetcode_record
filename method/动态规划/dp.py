@@ -6,17 +6,18 @@
 
 """
 
-动态规划算法: 递归公式 初始化 遍历顺序 打印DP数组
+动态规划算法dynamic programming: 递归公式 初始化 遍历顺序 打印DP数组
 
-解决  背包问题 打家劫舍  股票问题 子序列问题
+解决  背包问题  打家劫舍  股票问题 子序列问题
 
 
 =====================  代码模板 ==========================
 
-    void dp(parameters){
-
-
-    }
+    确定dp数组 dp table 以及下标的含义
+    确定递推公式
+    dp数组如何初始化
+    确定遍历顺序
+    举例推导dp数组
 
 =====================  代码模板 ==========================
 
@@ -26,9 +27,3 @@ https://www.bilibili.com/video/BV13Q4y197Wg/?spm_id_from=pageDriver&vd_source=71
 
 
 """
-def search_matrix(matrix, target):
-    for row in matrix:
-        if target >
-
-
-print(search_matrix(matrix= [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target= 3))
