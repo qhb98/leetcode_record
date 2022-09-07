@@ -20,7 +20,7 @@ def matrix_multi(a, b):
         return -1
 
     # 如果某个矩阵为空
-    if (len(a) == 0 and len(a[0]) == 0) or (len(b) == 0 and len(b[0]) == 0):
+    if a is None or b is None:
         return -1
 
     # 正常情况
