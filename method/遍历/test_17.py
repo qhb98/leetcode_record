@@ -29,7 +29,7 @@ while digits:
             q.append(tmp1)
             # 组合后放入队列中
     digits = digits[1:]
-    # 将这个已经组合完成的数字移除
+# 将这个已经组合完成的数字移除
 res = []
 # 因为刚刚元素均存在了队列中，此时需要返回一个数组，所以需要重新初始化一个数组
 for p in range(len(q)):
